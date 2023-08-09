@@ -24,7 +24,7 @@
                 <!-- Dashboard -->
                 <!-- =================== -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                    <a class="sidebar-link" href="{{url('/')}}" aria-expanded="false">
                   <span>
                     <i class="ti ti-aperture"></i>
                   </span>
@@ -36,14 +36,14 @@
                 <!-- ============================= -->
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Apps</span>
+                    <span class="hide-menu">Master</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./page-user-profile.html" aria-expanded="false">
+                    <a class="sidebar-link" href="{{url('/kategori')}}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-user-circle"></i>
+                    <i class="ti ti-category-2"></i>
                   </span>
-                        <span class="hide-menu">User Profile</span>
+                        <span class="hide-menu">Kategori</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

@@ -12,6 +12,7 @@
     <meta name="description" content="Mordenize" />
     <meta name="author" content="" />
     <meta name="keywords" content="Mordenize" />
+    <meta name="csrf-token" content="{{csrf_token()}}"
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
     <link rel="shortcut icon" type="image/png" href="{{url('/assets/images/logos/favicon.ico')}}" />
@@ -67,11 +68,12 @@
 <script src="{{url('ssets/js/app-style-switcher.js')}}"></script>
 <script src="{{url('assets/js/sidebarmenu.js')}}"></script>
 <script src="{{url('assets/js/custom.js')}}"></script>
+<script src="{{url('dist/libs/prismjs/prism.js')}}"></script>
 <!--  current page js files -->
 
-<script src="{{url('assets/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
 <script src="{{url('assets/libs/datatables-net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{url('assets/js/datatable/datatable-basic.init.js')}}"></script>
-
+<script src="{{url('assets/js/validator.min.js')}}"></script>
+@stack('scripts')
 </body>
 </html>
