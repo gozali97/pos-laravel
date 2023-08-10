@@ -3,10 +3,10 @@
 @section('content')
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header d-inline-flex">
+            <div class="card-header d-flex justify-content-between align-items-center">
                 <h2>List Kategori</h2>
                 <div class="w-auto ms-2">
-                <button type="button" class="justify-content-center w-100 btn mb-1 btn-rounded btn-success d-flex align-items-center" onclick="addForm('{{route('kategori.store')}}')">
+                <button type="button" class="btn btn-rounded btn-success" onclick="addForm('{{route('kategori.store')}}')">
                     <i class="ti ti-plus fs-4 me-1"></i>
                     Tambah
                 </button>
@@ -64,10 +64,19 @@
                     })
                         .done((response)=>{
                             $('#addModal').modal('hide');
+                            toastr.success('Proses berhasil dijalankan', 'Sukses', {
+                                closeButton: true,
+                                tapToDismiss: false,
+                                positionClass: 'toast-top-center'
+                            });
                         table.ajax.reload();
                     })
                         .fail((errors)=>{
-                        alert('tidak dapat menyimpan data');
+                            toastr.error('Terjadi kesalahan saat menyimpan data', 'Error', {
+                                closeButton: true,
+                                tapToDismiss: false,
+                                positionClass: 'toast-top-center'
+                            });
                         return;
                     });
                 }
@@ -103,18 +112,25 @@
         }
 
         function deleteData(url){
-            if(confirm('Yakin hapus data')){
-                $.post(url, {
-                    '_token': $('[name=csrf-token]').attr('content'),
-                    '_method': 'delete'
-                }).done((response)=>{
-                    table.ajax.reload();
-                }).fail((errors)=>{
-                    alert('gagal menghapus  data');
-                    return;
-                })
-            }
-
+            Swal.fire({
+                title: 'Yakin hapus data?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.post(url, {
+                        '_token': $('[name=csrf-token]').attr('content'),
+                        '_method': 'delete'
+                    }).done((response) => {
+                        Swal.fire('Data Berhasil dihapus', '', 'success');
+                        table.ajax.reload();
+                    }).fail((errors) => {
+                        Swal.fire('Gagal menghapus data', '', 'error');
+                    });
+                }
+            });
         }
     </script>
 @endpush

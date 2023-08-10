@@ -47,6 +47,14 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{url('/produk')}}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-cpu-2"></i>
+                  </span>
+                        <span class="hide-menu">Produk</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
                   <span class="d-flex">
                     <i class="ti ti-chart-donut-3"></i>

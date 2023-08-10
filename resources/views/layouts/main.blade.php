@@ -19,6 +19,7 @@
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{url('/assets/libs/owl-corousel/dist/assets/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/libs/datatables-net-bs5/css/dataTables.bootstrap5.min.css')}}">
+    <link rel="stylesheet" href="{{url('assets/libs/sweetalert2/dist/sweetalert2.min.css')}}">
 
     <!-- Core Css -->
     <link  id="themeColors"  rel="stylesheet" href="{{url('/assets/css/style.min.css')}}" />
@@ -74,6 +75,9 @@
 <script src="{{url('assets/libs/datatables-net/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{url('assets/js/datatable/datatable-basic.init.js')}}"></script>
 <script src="{{url('assets/js/validator.min.js')}}"></script>
+<script src="{{url('assets/js/plugins/toastr-init.js')}}"></script>
+<script src="{{url('assets/libs/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+<script src="{{url('assets/js/forms/sweet-alert.init.js')}}"></script>
 @stack('scripts')
 </body>
 </html>
