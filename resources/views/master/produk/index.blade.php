@@ -14,7 +14,7 @@
                     <i class="ti ti-trash fs-4 me-1"></i>
                     Hapus
                 </button>
-                    <button type="button" class="btn btn-rounded btn-primary" onclick="addForm('{{route('produk.store')}}')">
+                    <button type="button" class="btn btn-rounded btn-primary" onclick="cetakBarcode('{{route('produk.cetakBarcode')}}')">
                         <i class="ti ti-printer fs-4 me-1"></i>
                         Cetak Barcode
                     </button>
@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
-                            <form action="" class="form-produk">
+                            <form action="" method="post" class="form-produk">
                                 @csrf
                                 <table id="datatable" class="table border table-striped table-bordered text-nowrap">
                                     <thead>
@@ -201,5 +201,27 @@
                 return;
             }
         }
+        function cetakBarcode(url){
+            if($('input:checked').length < 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Pilih data yang akan dicetak!',
+                })
+                return;
+
+            }else if($('input:checked').length < 3){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Pilih minimal 3 data yang akan dicetak!',
+                })
+                return;
+            }else{
+                $('.form-produk').attr('target', '_blank').attr('action', url).submit();
+
+            }
+        }
+
     </script>
 @endpush

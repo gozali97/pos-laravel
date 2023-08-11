@@ -7,6 +7,7 @@ use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use PDF;
 
 class ProdukController extends Controller
 {
@@ -151,6 +152,23 @@ class ProdukController extends Controller
             return response()->json(null, 204);
         } catch (\Exception $e) {
             Log::error('Terjadi kesalahan hapus semua produk: ' . $e->getMessage());
+            return redirect()->back();
+        }
+    }
+
+    public function cetakBarcode(Request $request){
+        try {
+            $dataProduk = [];
+            foreach ($request->id_produk as $id){
+                $data = Produk::where('id_produk', $id)->first();
+                $dataProduk[] = $data;
+            }
+            $pdf = PDF::loadView('master.produk.print', compact('dataProduk'));
+            $pdf->setPaper('a4');
+            return $pdf->stream('produk.pdf');
+        } catch (\Exception $e) {
+            dd($e);
+            Log::error('Terjadi kesalahan cetak barcode produk: ' . $e->getMessage());
             return redirect()->back();
         }
     }

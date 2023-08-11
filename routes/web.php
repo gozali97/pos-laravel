@@ -23,6 +23,7 @@ Route::resource('/kategori', KategoriController::class);
 Route::controller(ProdukController::class)->group(function () {
     Route::get('produk/data', 'data')->name('produk.data');
     Route::post('produk/hapus-terpilih', 'deleteSelected')->name('produk.deleteSelected');
+    Route::post('produk/cetak-barcode', 'cetakBarcode')->name('produk.cetakBarcode');
 });
 Route::resource('/produk', ProdukController::class);
 
