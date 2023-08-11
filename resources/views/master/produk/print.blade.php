@@ -9,16 +9,14 @@
 </head>
 <body>
 <table width="100%">
-    Copy code
     <tr>
-        @foreach($dataProduk as $key => $p)
-            <td style="text-align: center;border: 1px solid">
+        @foreach($dataProduk as $p)
+            <td style="text-align: center;border: 1px solid;margin-bottom: 2%">
                 <p>{{$p->nama_produk}} - Rp. {{format_uang($p->harga_jual)}}</p>
                 <img src="data:image/png;base64,{{DNS1D::getBarcodePNG($p->nama_produk, 'C39')}}" width="180" height="60">
                 <p>{{$p->kode_produk}}</p>
-
             </td>
-            @if(($key + 1) % 3 == 0)
+            @if($no++ % 3 == 0)
     </tr> <tr>
         @endif
         @endforeach

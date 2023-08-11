@@ -163,7 +163,8 @@ class ProdukController extends Controller
                 $data = Produk::where('id_produk', $id)->first();
                 $dataProduk[] = $data;
             }
-            $pdf = PDF::loadView('master.produk.print', compact('dataProduk'));
+            $no = 1;
+            $pdf = PDF::loadView('master.produk.print', compact('dataProduk', 'no'));
             $pdf->setPaper('a4');
             return $pdf->stream('produk.pdf');
         } catch (\Exception $e) {
