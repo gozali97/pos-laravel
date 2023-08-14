@@ -168,7 +168,7 @@ class ProdukController extends Controller
             $pdf->setPaper('a4');
             return $pdf->stream('produk.pdf');
         } catch (\Exception $e) {
-            dd($e);
+//            dd($e);
             Log::error('Terjadi kesalahan cetak barcode produk: ' . $e->getMessage());
             return redirect()->back();
         }

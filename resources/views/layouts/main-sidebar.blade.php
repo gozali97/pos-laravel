@@ -54,31 +54,14 @@
                         <span class="hide-menu">Produk</span>
                     </a>
                 </li>
+                </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-                  <span class="d-flex">
-                    <i class="ti ti-chart-donut-3"></i>
+                    <a class="sidebar-link" href="{{url('/member')}}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-list-details"></i>
                   </span>
-                        <span class="hide-menu">Blog</span>
+                        <span class="hide-menu">Member</span>
                     </a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item">
-                            <a href="./blog-posts.html" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Posts</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="./blog-detail.html" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                    <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Details</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="#" aria-expanded="false">

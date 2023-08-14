@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\Master\ProdukController;
+use App\Http\Controllers\Master\MemberController;
 
 
 Route::get('/', function () {
@@ -26,5 +27,12 @@ Route::controller(ProdukController::class)->group(function () {
     Route::post('produk/cetak-barcode', 'cetakBarcode')->name('produk.cetakBarcode');
 });
 Route::resource('/produk', ProdukController::class);
+
+Route::controller(MemberController::class)->group(function () {
+    Route::get('member/data', 'data')->name('member.data');
+    Route::post('member/hapus-terpilih', 'deleteSelected')->name('member.deleteSelected');
+    Route::post('member/cetak-member', 'cetakMember')->name('member.cetakMember');
+});
+Route::resource('/member', MemberController::class);
 
 
