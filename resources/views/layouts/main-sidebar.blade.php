@@ -64,6 +64,14 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{url('/supplier')}}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-shield-up"></i>
+                  </span>
+                        <span class="hide-menu">Supplier</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
                   <span class="d-flex">
                     <i class="ti ti-basket"></i>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\Master\ProdukController;
 use App\Http\Controllers\Master\MemberController;
+use App\Http\Controllers\Master\SupplierController;
 
 
 Route::get('/', function () {
@@ -34,5 +35,11 @@ Route::controller(MemberController::class)->group(function () {
     Route::post('member/cetak-member', 'cetakMember')->name('member.cetakMember');
 });
 Route::resource('/member', MemberController::class);
+
+Route::controller(SupplierController::class)->group(function () {
+    Route::get('supplier/data', 'data')->name('supplier.data');
+    Route::post('supplier/hapus-terpilih', 'deleteSelected')->name('supplier.deleteSelected');
+});
+Route::resource('/supplier', SupplierController::class);
 
 
